@@ -15,6 +15,7 @@ set history=100
 set number
 set showmatch
 set nohls
+set ruler
 :nmap <M-Left> :bprev<CR>
 :nmap <M-Right> :bnext<CR>
 
@@ -39,9 +40,18 @@ endfunction
 
 call plug#begin()
 
+if isdirectory("/usr/local/opt/fzf")
+  Plug '/usr/local/opt/fzf'
+else
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+endif
+
+Plug 'junegunn/fzf.vim'
+
 Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go'
+Plug 'janko-m/vim-test'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
   let g:UltiSnipsExpandTrigger = "<tab>"
@@ -57,5 +67,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'pangloss/vim-javascript'
+Plug 'pbrisbin/vim-mkdir'
 
 call plug#end()
