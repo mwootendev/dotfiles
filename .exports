@@ -21,3 +21,5 @@ export MANPAGER='less -X';
 
 # Hide the “default interactive shell is now zsh” warning
 export BASH_SILENCE_DEPRECATION_WARNING=1;
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'

@@ -47,6 +47,7 @@ else
 endif
 
 Plug 'junegunn/fzf.vim'
+  nnoremap <C-p> :Files<Cr>
 
 Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
